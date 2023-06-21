@@ -3069,7 +3069,7 @@ MoreAutoFarmTab:CreateToggle("Gems (x50)",function(state)
 		_G.loop = false
 	end
 end)
-
+PetsTab:CreateLabel("Hatch Pets")
 PetsTab:CreateLabel("Basic Pets") 
 
 PetsTab:CreateToggle("Red Kitty",function(state) 
@@ -3703,7 +3703,7 @@ PetsTab:CreateToggle("Ultimate Overdrive Bunny",function(state)
 		_G.loop = false 
 	end 
 end) 
-
+PetsTab:CreateLabel("Evolve Pets")
 PetsTab:CreateLabel("Basic Pets") 
 
 PetsTab:CreateToggle("Red Kitty",function(state) 

